@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<div id="header">
+     <title>Tadpole Bandit Feeds</title>    
+      <strong><link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"></strong>
+    </header>
+    <div>
+  </head>
+ <body>
+	<div id="container">
+		<h1>Tadpole Bandit Feeds</h1>
+		<div id="navigation">
+			<ul>
+				<li><a href="{{ url_for('home') }}">Home</a>
+				<li><a href="{{ url_for('feeds') }}">Feeds<a/>
+			</ul>
+		</div>
+		<div id="content">
+			{% block content %}
+			{% endblock %}
+			
+		</div>
+		<div id="footer">
+			Ceci n'est pas une "footer".  
+		</div>
+	</div>
+  </body>
+</html>

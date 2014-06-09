@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="content">
+  	{{ config.url_stocks }}
+    BYU Football
+    {% for item in data_byu["headlines"] %}
+    	{% if item['title'] %}
+        	<li><a href="{{ item['links']['web']['href'] }}" target="_blank">{{ item['title'] }}</a> ({{item['published']}}) </li>
+        	{% endif %}
+	{% endfor %}
+	<br>
+	Arsenal
+	{% for item in data_ars["headlines"] %}
+    	{% if item['title'] %}
+        	<li><a href="{{ item['links']['web']['href'] }}" target="_blank">{{ item['title'] }}</a> ({{item['published']}}) </li>
+    	{% endif %}
+	{% endfor %}
+	<br>
+	Suns
+	{% for item in data_suns["headlines"] %}
+    	{% if item['title'] %}
+        	<li><a href="{{ item['links']['web']['href'] }}" target="_blank">{{ item['title'] }}</a> ({{item['published']}})</li>
+    	{% endif %}
+	{% endfor %}
+	<br>
+	USMNT
+	{% for item in data_usmnt["headlines"] %}
+    	{% if item['title'] %}
+        	<li><a href="{{ item['links']['web']['href'] }}" target="_blank">{{ item['title'] }}</a> ({{item['published']}})</li>
+    	{% endif %}
+	{% endfor %} 
+	<br>
+	<!-- Stocks
+	{% for item in data_stocks["headlines"] %}
+    	{% if item['title'] %}
+        	<li><a href="{{ item['links']['web']['href'] }}" target="_blank">{{ item['title'] }}</a> ({{item['published']}})</li>
+    	{% endif %}
+	{% endfor %}  -->
+
+
+  </div>
+{% endblock %}
